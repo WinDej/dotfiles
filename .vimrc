@@ -42,7 +42,8 @@ map <F4> :tabnew<cr>
 syntax on
 
 set background=dark
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme solarized
 " set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h20
 set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%) 
 
