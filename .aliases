@@ -1,16 +1,1 @@
-# Universal Aliases
-alias cls='clear'
-alias ls='ls --color'
-alias la='ls -a'
-alias ll='ls -al'
-alias ip='ifconfig | grep broadcast'
-alias cl='clear'
-alias vbs='ssh pawel@vbserver'
-
-# Git aliases
-alias gs="git status"
-alias gd="git diff"
-alias ga="git add "
-alias gc="git commit -m "
-alias gp="git push "
-
+.aliases
