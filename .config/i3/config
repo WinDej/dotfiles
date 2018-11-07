@@ -112,7 +112,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # assign programs to workspace
 assign [class="Chromium"] $ws2
-assign [class="Sublime_text"] $ws3
+assign [class="code"] $ws3
 assign [class="Nautilus"] $ws4
 assign [class="discord"] $ws9
 assign [class="Google Play Music Desktop Player"] $ws10
@@ -173,6 +173,7 @@ exec_always gpmdp
 exec_always discord
 exec_always nm-applet
 exec_always feh --bg-scale ~/Pictures/Wallpapers/wallpaper.jpg
+exec_always --no-startup-id caffeine
 exec compton -f
 
 
@@ -210,3 +211,7 @@ mode $sysmenu {
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
+
+# floating enable
+for_window [class="Yad"] floating enable
+

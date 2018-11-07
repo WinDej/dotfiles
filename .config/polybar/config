@@ -50,7 +50,7 @@ font-1 = FontAwesome:size=10;0
 font-2 = siji:pixelsize=10;0
 
 modules-left = i3
-modules-center = date
+modules-center = popup-calendar 
 modules-right = pulseaudio wlan eth battery 
 
 tray-position = right
@@ -170,6 +170,12 @@ format-discharging-underline = #ffb52a
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+interval = 1
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup
+format-underline = ${colors.primary}
 
 [settings]
 screenchange-reload = true
