@@ -45,9 +45,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
+;        
+
 font-0 = Terminus:size=8;0
-font-1 = FontAwesome:size=10;0
+font-1 = FontAwesome:size=9;0
 font-2 = siji:pixelsize=10;0
+font-3 = Material-Design-Iconic-Font:pixelsize=10;
 
 modules-left = i3
 modules-center = popup-calendar 
@@ -66,6 +69,13 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+ws-icon-0 = 1:;
+ws-icon-1 = 2:;
+ws-icon-2 = 3:;
+ws-icon-3 = 4:;
+ws-icon-4 = 10:;
+ws-icon-5 = 9:;
+ws-icon-default = 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
@@ -74,23 +84,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = 2 
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -102,7 +112,7 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <label-connected>
+format-connected =  <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
@@ -120,7 +130,7 @@ interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected =  %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -141,13 +151,13 @@ time-alt = %H:%M:%S
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
-label = "%date% %time% "
+label = "date% %time% "
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 label-volume-underline = #009e12
 
@@ -161,14 +171,32 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <label-charging>
+;format-charging =  <label-charging>
+format-charging = <animation-charging> <label-charging>
 format-charging-underline = #009e12
 
-format-discharging = <label-discharging>
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+;format-discharging =  <label-discharging>
+format-discharging  = <ramp-capacity> <label-discharging>
 format-discharging-underline = #ffb52a 
 
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
 [module/popup-calendar]
 type = custom/script
